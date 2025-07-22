@@ -1,0 +1,100 @@
+1.  create a folder.
+2.  open terminal in that folder path.
+3.  initialize node.js app/generate package.json(npm init -y).
+4.  generate node modules [npm i]-> install express.js [npm i express].
+5.  create index.js file.
+
+->  import express.
+->  create server app.
+->  server called listen.
+->  request handler implemented.
+
+
+-> Environmental Variables and process :
+        Environment variables are dynamic values that can affect the behavior of a running process.
+        In Node.js, you can access environment variables using the process.env object.
+        These variables are set outside your application and read by your application during runtime.
+
+-> dotenv :
+        Dotenv is a zero-dependency module that loads environment variables from 
+        a .env file into process.env.
+        Syntax : npm i dotenv.
+
+-> Middleware : 
+        A special function that can act on requests even before it hits the server.
+
+        1. PreDefined.
+        2. UserDefined.
+
+        Syntax : 
+                        const middleWareName=(req,res,next)=>{
+                                next()
+                        }
+
+        2 Types based on implimentation of Middleware:
+           1. Application level Middlewares.
+           2. Router specific Middlewares.
+
+
+-> Cors (Cross Origin Resource Sharing) mechanics :
+        HTTP based mechanism for verifying and allowing requests from a different origin.
+        Syntax : npm install cors  [cors()].
+
+-> nodemon : 
+        nodemon is a tool that helps develop Node.js based applications by automatically 
+        restarting the node application when file changes in the directory are detected.
+        To run Node.js in backend, without stopping for one method. (like mongodb in docker, node.js will be running on backend).
+        Syntax : npm i -g nodemon.
+
+-> mongoose :
+        Mongoose provides a straight-forward, schema-based solution to model your application data.
+        It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
+        Is a MongoDB object modelling tool designed to work in an asynchronous environment,
+        Mongoose supports Node.js and Deno (alpha).
+        Syntax : npm i mongoose.
+
+
+-> JWT [Json Web Token] : 
+        Authentication technique used in API's for securely transfering sensitive data like user information without spilling it .
+        Using JWT a server generates a random character based token for individual authenticated users, which can be used as the further
+        Authentication credential in authorized API requests.
+        Need to install jasonwebtoken package to impliment jwt with express.js + node.js based rest API servers.
+        Syntax : npm i jasonwebtoken.
+
+        sign() : Used to create token  :  sign(payload/data,secretKey)
+        verify() : Used for verifying a token :  verify(token,secretKey)
+
+        Diagram of working JWT : img link :  https://i.sstatic.net/cXxYn.png
+
+
+        Diagram :-                      JWT (jasonwebtoken)
+
+        Browser | Client                                              server
+
+           |                                                            |
+           |                                                            |
+                1. POST/users/login with username and password
+           ------------------------------------------------------------->   --
+                                                                              |
+                3. Returns the JWT to the Browser                             |         2. Create a JWT with a secret Key
+                                                                              |   
+           <-------------------------------------------------------------   <--
+
+                4. Sends the JWT on the authorization Header
+           ------------------------------------------------------------->   --
+                                                                              |
+                6. Sends response to the client                               |         5. Check JWT signatue. Get user information from the JWT
+                                                                              |
+           <-------------------------------------------------------------  <--
+
+
+-> react-toastify :
+        React-Toastify allows you to add notifications to your app with ease.
+        ex: exchange for alert system,
+        Syntax : npm i react-toastify.
+
+-> Multer :
+     Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.
+     It is written on top of busboy for maximum efficiency.  
+     To Upload a file content we need multer.
+     Syntax : npm i multer. 
